@@ -1,5 +1,6 @@
 package meteo;
 
+
 public class Main {
 
     // Есть библиотека сбора данных от датчиков. Все они были куплены в комплекте с этой библиотекой.
@@ -12,5 +13,6 @@ public class Main {
         meteoDb.save(ms200_1);
 
         // Здесь надо вызвать метод getData у класса ST500Info. Полученные данные отправить в метод save объекта meteoDb
+        meteoDb.save(new AdapterST500Info(new ST500Info().getData()));
     }
 }
